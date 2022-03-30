@@ -3,12 +3,14 @@
 <h1>Blogs</h1>
 
 <div id="blogs">
-  <% @blogs.each do |blog| %>
-    <%= render blog %>
-    <p>
-      <%= link_to "Show this blog", blog %>
-    </p>
-  <% end %>
+  <%# adds blog_ruler between each Blog content %>
+  <%= render partial: @blogs, spacer_template: "blog_ruler" %>
 </div>
 
 <%= link_to "New blog", new_blog_path %>
+
+<%# Syntax for Caching data%>
+
+<%# <% cache do %>
+  <%#  html
+<% end %> 
